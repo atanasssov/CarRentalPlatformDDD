@@ -11,7 +11,7 @@
         public override bool Equals(object? obj)
         {
             // Check if obj is of type Entity<TId>
-            if (!(obj is Entity<TId> other))
+            if (obj is not Entity<TId> other)
             {
                 return false;
             }

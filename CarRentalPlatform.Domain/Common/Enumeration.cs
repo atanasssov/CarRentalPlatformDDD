@@ -83,7 +83,7 @@ namespace CarRentalPlatform.Domain.Common
         // Overrides the equality comparison method to compare two enumeration constants
         public override bool Equals(object? obj)
         {
-            if (!(obj is Enumeration otherValue))
+            if (obj is not Enumeration otherValue)
             {
                 return false;
             }
