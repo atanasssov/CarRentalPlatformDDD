@@ -16,7 +16,8 @@ namespace CarRentalPlatform.Infrastructure
             return services.AddDbContext<CarRentalDbContext>(options => options
                     .UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                         b => b.MigrationsAssembly(typeof(CarRentalDbContext).Assembly.FullName)))
-                    .AddTransient(typeof(IRepository<>),typeof(DataRepository<>));
+                .AddTransient<IInitializer, CarRentalDbInitializer>()
+                .AddTransient(typeof(IRepository<>),typeof(DataRepository<>));
         }
     }
 }
