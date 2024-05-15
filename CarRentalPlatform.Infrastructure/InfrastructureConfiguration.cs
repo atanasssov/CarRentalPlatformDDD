@@ -3,6 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using CarRentalPlatform.Infrastructure.Persistence;
+using CarRentalPlatform.Application.Contracts;
+using CarRentalPlatform.Infrastructure.Persistence.Repositories;
 
 namespace CarRentalPlatform.Infrastructure
 {
@@ -12,9 +14,9 @@ namespace CarRentalPlatform.Infrastructure
                                                                 IConfiguration configuration)
         {
             return services.AddDbContext<CarRentalDbContext>(options => options
-                    .UseSqlServer(
-                        configuration.GetConnectionString("DefaultConnection"),
-                        b => b.MigrationsAssembly(typeof(CarRentalDbContext).Assembly.FullName)));
+                    .UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
+                        b => b.MigrationsAssembly(typeof(CarRentalDbContext).Assembly.FullName)))
+                    .AddTransient(typeof(IRepository<>),typeof(DataRepository<>));
         }
     }
 }
