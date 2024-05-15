@@ -39,7 +39,7 @@
         }
 
         // Overloads the equality operator (==) to provide custom equality comparison logic for instances of the Entity<TId> class 
-        public static bool operator ==(Entity<TId> first, Entity<TId> second)
+        public static bool operator ==(Entity<TId>? first, Entity<TId>? second)
         {
             // Check if both instances are null
             if (first is null && second is null)
@@ -61,7 +61,7 @@
         // Allows comparing two instances of Entity<TId> for inequality.
         // Returns true if the instances are not equal according to the equality operator (==).
         // Otherwise, returns false.
-        public static bool operator !=(Entity<TId> first, Entity<TId> second) => !(first == second);
+        public static bool operator !=(Entity<TId>? first, Entity<TId>? second) => !(first == second);
 
         // Overrides the GetHashCode method to provide a custom hash code calculation for instances of the Entity<TId> class.
         // Computes the hash code based on the combination of the runtime type of the object and its unique identifier (Id).
