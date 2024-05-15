@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalPlatform.Domain", "CarRentalPlatform.Domain\CarRentalPlatform.Domain.csproj", "{68DC2EB2-805C-490E-8929-E64F70E0B07C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarRentalPlatform.Domain", "CarRentalPlatform.Domain\CarRentalPlatform.Domain.csproj", "{68DC2EB2-805C-490E-8929-E64F70E0B07C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRentalPlatform.Startup", "CarRentalPlatform.Startup\CarRentalPlatform.Startup.csproj", "{C183A3E0-F248-4518-8092-1B50A6E27BBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{68DC2EB2-805C-490E-8929-E64F70E0B07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68DC2EB2-805C-490E-8929-E64F70E0B07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68DC2EB2-805C-490E-8929-E64F70E0B07C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C183A3E0-F248-4518-8092-1B50A6E27BBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C183A3E0-F248-4518-8092-1B50A6E27BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C183A3E0-F248-4518-8092-1B50A6E27BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C183A3E0-F248-4518-8092-1B50A6E27BBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
