@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 using CarRentalPlatform.Domain.Models.CarAds;
 
-
 using static CarRentalPlatform.Domain.Models.ModelConstants.Common;
 using static CarRentalPlatform.Domain.Models.ModelConstants.CarAd;
 
