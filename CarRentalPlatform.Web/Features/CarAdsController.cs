@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 using CarRentalPlatform.Domain.Models.CarAds;
 using CarRentalPlatform.Application.Contracts;
+using CarRentalPlatform.Application;
+
 
 
 namespace CarRentalPlatform.Web.Features
@@ -11,18 +14,26 @@ namespace CarRentalPlatform.Web.Features
     public class CarAdsController : ControllerBase
     {
         private readonly IRepository<CarAd> carAds;
+        private readonly IOptions<ApplicationSettings> settings;
 
-        public CarAdsController(IRepository<CarAd> carAds)
+        public CarAdsController(IRepository<CarAd> carAds,
+                                IOptions<ApplicationSettings> settings)
         {
             this.carAds = carAds;
+            this.settings = settings;
         }
 
         [HttpGet]
-        public IEnumerable<CarAd> Get()
+        public object Get()
         {
-            return this.carAds
-            .All()
-            .Where(c => c.IsAvailable);
+            return new
+            {
+                Settings = this.settings,
+                CarAds = this.carAds
+                .All()
+                .Where(c => c.IsAvailable)
+                .ToList()
+            };
         }
     }
 }
