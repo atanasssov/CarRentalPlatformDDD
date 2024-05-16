@@ -1,6 +1,7 @@
 using CarRentalPlatform.Application;
 using CarRentalPlatform.Infrastructure;
 using CarRentalPlatform.Startup;
+using CarRentalPlatform.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddWebComponents();
 builder.Services.AddControllers();
 
 
