@@ -10,7 +10,7 @@ namespace CarRentalPlatform.Domain.Models.Dealers
     {
         private readonly HashSet<CarAd> carAds;
 
-        public Dealer(string name, string phoneNumber)
+        internal Dealer(string name, string phoneNumber)
         {
             this.Validate(name);
 
