@@ -5,8 +5,6 @@ using CarRentalPlatform.Domain.Models.CarAds;
 using CarRentalPlatform.Application.Contracts;
 using CarRentalPlatform.Application;
 
-
-
 namespace CarRentalPlatform.Web.Features
 {
     [ApiController]
