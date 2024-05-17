@@ -2,11 +2,13 @@ using CarRentalPlatform.Application;
 using CarRentalPlatform.Infrastructure;
 using CarRentalPlatform.Startup;
 using CarRentalPlatform.Web;
+using CarRentalPlatform.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.Services.AddDomain();
 builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddWebComponents();

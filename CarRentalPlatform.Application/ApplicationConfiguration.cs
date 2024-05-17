@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
+
 namespace CarRentalPlatform.Application
 {
     public static class ApplicationConfiguration
@@ -9,7 +10,14 @@ namespace CarRentalPlatform.Application
                                                              IConfiguration configuration)
 
         {
-            return services.Configure<ApplicationSettings>(configuration.GetSection(nameof(ApplicationSettings)),options => options.BindNonPublicProperties = true);
+            var applicationAssembly = (typeof(ApplicationConfiguration).Assembly);
+
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(applicationAssembly));
+
+            return services.
+                Configure<ApplicationSettings>(configuration.GetSection(nameof(ApplicationSettings)), options => options.BindNonPublicProperties = true);
+                
+                
         }
     }
 }
