@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-using CarRentalPlatform.Application.Contracts;
-using CarRentalPlatform.Application.Features.Identity;
 using CarRentalPlatform.Application.Features.Identity.Commands.LoginUser;
+using CarRentalPlatform.Application.Features.Identity.Commands.CreateUser;
 
 namespace CarRentalPlatform.Web.Features
 {
@@ -10,22 +9,12 @@ namespace CarRentalPlatform.Web.Features
     [Route("[controller]")]
     public class IdentityController : ApiController
     {
-        private readonly IIdentity identity;
-
-        public IdentityController(IIdentity identity) => this.identity = identity;
-
+        
         [HttpPost]
         [Route(nameof(Register))]
-        public async Task<ActionResult> Register(UserInputModel model)
+        public async Task<ActionResult> Register(CreateUserCommand command)
         {
-            var result = await this.identity.Register(model);
-
-            if (!result.Succeeded)
-            {
-                return BadRequest(result.Errors);
-            }
-
-            return Ok();
+            return await this.Send(command);
         }
 
         [HttpPost]
