@@ -9,7 +9,7 @@ namespace CarRentalPlatform.Web.Features
 {
     [ApiController]
     [Route("[controller]")]
-    public class CarAdsController : ApiController
+    public class CarAdsController : ControllerBase
     {
         private readonly IRepository<CarAd> carAds;
         private readonly IOptions<ApplicationSettings> settings;
