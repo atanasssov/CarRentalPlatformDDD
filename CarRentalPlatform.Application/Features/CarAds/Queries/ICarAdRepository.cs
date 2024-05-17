@@ -1,8 +1,8 @@
 ﻿using CarRentalPlatform.Application.Contracts;
-using CarRentalPlatform.Application.Features.Identity.CarAds.Queries.Search;
+using CarRentalPlatform.Application.Features.CarAds.Queries.Search;
 using CarRentalPlatform.Domain.Models.CarAds;
 
-namespace CarRentalPlatform.Application.Features.Identity.CarAds.Queries
+namespace CarRentalPlatform.Application.Features.CarAds.Queries
 {
     public interface ICarAdRepository : IRepository<CarAd>
     {

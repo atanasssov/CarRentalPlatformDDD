@@ -1,6 +1,7 @@
-﻿using MediatR;
+﻿using CarRentalPlatform.Application.Features.CarAds.Queries;
+using MediatR;
 
-namespace CarRentalPlatform.Application.Features.Identity.CarAds.Queries.Search
+namespace CarRentalPlatform.Application.Features.CarAds.Queries.Search
 {
     public class SearchCarAdsQuery : IRequest<SearchCarAdsOutputModel>
     {
@@ -17,11 +18,11 @@ namespace CarRentalPlatform.Application.Features.Identity.CarAds.Queries.Search
                 SearchCarAdsQuery request,
                 CancellationToken cancellationToken)
             {
-                var carAdListings = await this.carAdRepository.GetCarAdListings(
+                var carAdListings = await carAdRepository.GetCarAdListings(
                     request.Manufacturer,
                     cancellationToken);
 
-                var totalCarAds = await this.carAdRepository.Total(cancellationToken);
+                var totalCarAds = await carAdRepository.Total(cancellationToken);
 
                 return new SearchCarAdsOutputModel(carAdListings, totalCarAds);
             }

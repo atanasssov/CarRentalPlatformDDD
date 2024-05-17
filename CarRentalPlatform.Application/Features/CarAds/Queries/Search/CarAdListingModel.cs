@@ -1,4 +1,4 @@
-﻿namespace CarRentalPlatform.Application.Features.Identity.CarAds.Queries.Search
+﻿namespace CarRentalPlatform.Application.Features.CarAds.Queries.Search
 {
     public class CarAdListingModel
     {
@@ -10,12 +10,12 @@
             string category,
             decimal pricePerDay)
         {
-            this.Id = id;
-            this.Manufacturer = manufacturer;
-            this.Model = model;
-            this.ImageUrl = imageUrl;
-            this.Category = category;
-            this.PricePerDay = pricePerDay;
+            Id = id;
+            Manufacturer = manufacturer;
+            Model = model;
+            ImageUrl = imageUrl;
+            Category = category;
+            PricePerDay = pricePerDay;
         }
 
         public int Id { get; }

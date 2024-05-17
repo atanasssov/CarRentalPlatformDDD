@@ -1,11 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-
-using CarRentalPlatform.Domain.Models.CarAds;
-using CarRentalPlatform.Application.Contracts;
-using CarRentalPlatform.Application;
-using CarRentalPlatform.Application.Features.Identity.CarAds.Queries.Search;
-using MediatR;
+using CarRentalPlatform.Application.Features.CarAds.Queries.Search;
 
 namespace CarRentalPlatform.Web.Features
 {

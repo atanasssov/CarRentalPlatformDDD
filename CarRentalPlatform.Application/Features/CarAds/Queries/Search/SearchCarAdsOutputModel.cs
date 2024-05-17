@@ -1,11 +1,11 @@
-﻿namespace CarRentalPlatform.Application.Features.Identity.CarAds.Queries.Search
+﻿namespace CarRentalPlatform.Application.Features.CarAds.Queries.Search
 {
     public class SearchCarAdsOutputModel
     {
         internal SearchCarAdsOutputModel(IEnumerable<CarAdListingModel> carAds, int total)
         {
-            this.CarAds = carAds;
-            this.Total = total;
+            CarAds = carAds;
+            Total = total;
         }
 
         public IEnumerable<CarAdListingModel> CarAds { get; }

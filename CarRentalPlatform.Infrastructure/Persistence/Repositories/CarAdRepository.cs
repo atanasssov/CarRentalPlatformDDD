@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
-using CarRentalPlatform.Application.Features.Identity.CarAds.Queries.Search;
-using CarRentalPlatform.Application.Features.Identity.CarAds.Queries;
 using CarRentalPlatform.Domain.Models.CarAds;
+using CarRentalPlatform.Application.Features.CarAds.Queries;
+using CarRentalPlatform.Application.Features.CarAds.Queries.Search;
 
 namespace CarRentalPlatform.Infrastructure.Persistence.Repositories
 {
