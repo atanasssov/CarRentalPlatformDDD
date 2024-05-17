@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 
 using CarRentalPlatform.Application.Contracts;
 using CarRentalPlatform.Application.Features.Identity;
 using CarRentalPlatform.Application.Features.Identity.Commands.LoginUser;
+
 namespace CarRentalPlatform.Web.Features
 {
     [ApiController]
@@ -30,17 +30,9 @@ namespace CarRentalPlatform.Web.Features
 
         [HttpPost]
         [Route(nameof(Login))]
-        public async Task<ActionResult<LoginOutputModel>> Login(UserInputModel model)
+        public async Task<ActionResult<LoginOutputModel>> Login(LoginUserCommand command)
         {
-            var result = await this.identity.Login(model);
-
-            if (!result.Succeeded)
-            {
-                return BadRequest(result.Errors);
-            }
-
-            return result.Data;
+            return await this.Send(command);
         }
- 
     }
 }
