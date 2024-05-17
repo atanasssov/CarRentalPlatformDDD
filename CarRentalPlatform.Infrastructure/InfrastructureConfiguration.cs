@@ -40,6 +40,17 @@ namespace CarRentalPlatform.Infrastructure
                         .AddTransient(typeof(IRepository<>), typeof(DataRepository<>));
         }
 
+        internal static IServiceCollection AddRepositories(this IServiceCollection services)
+        {
+            return services
+                        .Scan(scan => scan
+                            .FromCallingAssembly()
+                            .AddClasses(classes => classes
+                                .AssignableTo(typeof(IRepository<>)))
+                            .AsMatchingInterface()
+                            .WithTransientLifetime());
+        }
+
         private static IServiceCollection AddIdentity(
             this IServiceCollection services,
             IConfiguration configuration)
