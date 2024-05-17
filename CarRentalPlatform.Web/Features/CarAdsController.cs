@@ -13,18 +13,7 @@ namespace CarRentalPlatform.Web.Features
     [Route("[controller]")]
     public class CarAdsController : ApiController
     {
-        private readonly IRepository<CarAd> carAds;
-        private readonly IOptions<ApplicationSettings> settings;
-
-        public CarAdsController(IRepository<CarAd> carAds,
-                                IOptions<ApplicationSettings> settings,
-                                IMediator mediator)
-        {
-            this.carAds = carAds;
-            this.settings = settings;
-         
-        }
-
+       
         [HttpGet]
         public async Task<ActionResult<SearchCarAdsOutputModel>> Get(
             [FromQuery] SearchCarAdsQuery query)
