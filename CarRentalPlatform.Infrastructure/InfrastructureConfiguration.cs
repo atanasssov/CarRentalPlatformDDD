@@ -18,11 +18,13 @@ namespace CarRentalPlatform.Infrastructure
 {
     public static class InfrastructureConfiguration
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services,
-                                                           IConfiguration configuration)
+        public static IServiceCollection AddInfrastructure(
+            this IServiceCollection services,
+            IConfiguration configuration)
         {
             return services
                         .AddDatabase(configuration)
+                        .AddRepositories()
                         .AddIdentity(configuration);
         }
 
@@ -36,8 +38,7 @@ namespace CarRentalPlatform.Infrastructure
                                 configuration.GetConnectionString("DefaultConnection"),
                                 b => b.MigrationsAssembly(typeof(CarRentalDbContext)
                                     .Assembly.FullName)))
-                        .AddTransient<IInitializer, CarRentalDbInitializer>()
-                        .AddTransient(typeof(IRepository<>), typeof(DataRepository<>));
+                        .AddTransient<IInitializer, CarRentalDbInitializer>();
         }
 
         internal static IServiceCollection AddRepositories(this IServiceCollection services)

@@ -3,7 +3,7 @@
 namespace CarRentalPlatform.Application.Contracts
 {
     public interface IRepository<out TEntity>
-         where TEntity : IAggregateRoot
+        where TEntity : IAggregateRoot
     {
 
     }

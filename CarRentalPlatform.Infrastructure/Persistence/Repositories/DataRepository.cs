@@ -3,19 +3,19 @@ using CarRentalPlatform.Domain.Common;
 
 namespace CarRentalPlatform.Infrastructure.Persistence.Repositories
 {
-    internal class DataRepository<TEntity> : IRepository<TEntity>
-       where TEntity : class, IAggregateRoot
+    internal abstract class DataRepository<TEntity> : IRepository<TEntity>
+         where TEntity : class, IAggregateRoot
     {
         private readonly CarRentalDbContext db;
 
-        public DataRepository(CarRentalDbContext db) => this.db = db;
-
-        public IQueryable<TEntity> All() => this.db.Set<TEntity>();
-
-        public Task<int> SaveChanges(CancellationToken cancellationToken = default)
+        protected DataRepository(CarRentalDbContext db)
         {
-            return this.db.SaveChangesAsync(cancellationToken);
+            this.db = db;
         }
-           
+
+        protected IQueryable<TEntity> All()
+        {
+            return this.db.Set<TEntity>();
+        }
     }
 }
