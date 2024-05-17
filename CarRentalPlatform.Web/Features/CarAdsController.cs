@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+
 using CarRentalPlatform.Application.Features.CarAds.Queries.Search;
 
 namespace CarRentalPlatform.Web.Features
