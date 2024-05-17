@@ -1,4 +1,5 @@
 ﻿using CarRentalPlatform.Application.Features.Identity;
+using CarRentalPlatform.Application.Features.Identity.Commands.LoginUser;
 
 namespace CarRentalPlatform.Application.Contracts
 {

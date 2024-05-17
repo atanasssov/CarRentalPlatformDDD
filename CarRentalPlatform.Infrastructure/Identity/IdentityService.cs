@@ -9,6 +9,7 @@ using Microsoft.IdentityModel.Tokens;
 using CarRentalPlatform.Application.Features.Identity;
 using CarRentalPlatform.Application;
 using CarRentalPlatform.Application.Contracts;
+using CarRentalPlatform.Application.Features.Identity.Commands.LoginUser;
 
 namespace CarRentalPlatform.Infrastructure.Identity
 {

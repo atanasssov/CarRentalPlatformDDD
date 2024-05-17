@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 using CarRentalPlatform.Application.Contracts;
 using CarRentalPlatform.Application.Features.Identity;
+using CarRentalPlatform.Application.Features.Identity.Commands.LoginUser;
 namespace CarRentalPlatform.Web.Features
 {
     [ApiController]

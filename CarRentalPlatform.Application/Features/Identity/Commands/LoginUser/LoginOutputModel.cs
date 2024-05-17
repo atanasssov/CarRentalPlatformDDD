@@ -1,10 +1,10 @@
-﻿namespace CarRentalPlatform.Application.Features.Identity
+﻿namespace CarRentalPlatform.Application.Features.Identity.Commands.LoginUser
 {
     public class LoginOutputModel
     {
         public LoginOutputModel(string token)
         {
-            this.Token = token;
+            Token = token;
         }
 
         public string Token { get; }
