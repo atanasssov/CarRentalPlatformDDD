@@ -7,7 +7,7 @@ namespace CarRentalPlatform.Web.Features
 {
     [ApiController]
     [Route("[controller]")]
-    public class IdentityController : ControllerBase
+    public class IdentityController : ApiController
     {
         private readonly IIdentity identity;
 
@@ -40,12 +40,6 @@ namespace CarRentalPlatform.Web.Features
 
             return result.Data;
         }
-
-        [HttpGet]
-        [Authorize]
-        public IActionResult Get()
-        {
-            return this.Ok(this.User.Identity.Name);
-        }
+ 
     }
 }
